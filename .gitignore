@@ -1,0 +1,7 @@
+node_modules/
+*.log
+.DS_Store
+
+# Local runtime/config artifacts
+mcp-stack.yaml
+*.bak

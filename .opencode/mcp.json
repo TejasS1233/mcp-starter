@@ -1,0 +1,116 @@
+{
+  "mcp": {
+    "servers": {
+      "filesystem": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "@modelcontextprotocol/server-filesystem",
+          "."
+        ],
+        "env": {}
+      },
+      "memory": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "@modelcontextprotocol/server-memory"
+        ],
+        "env": {}
+      },
+      "sequential-thinking": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "@modelcontextprotocol/server-sequential-thinking"
+        ],
+        "env": {}
+      },
+      "git": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "@modelcontextprotocol/server-git",
+          "."
+        ],
+        "env": {}
+      },
+      "postgres": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "@modelcontextprotocol/server-postgres",
+          "postgresql://localhost:5432/postgres"
+        ],
+        "env": {}
+      },
+      "github": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "@modelcontextprotocol/server-github"
+        ],
+        "env": {
+          "GITHUB_TOKEN": "updatedtoken"
+        }
+      }
+    },
+    "safety": {
+      "mode": "prompt",
+      "highRiskRequiresApproval": true,
+      "servers": [
+        {
+          "id": "filesystem",
+          "level": "medium",
+          "requireApproval": false,
+          "riskyActions": [
+            "delete",
+            "write",
+            "move"
+          ]
+        },
+        {
+          "id": "memory",
+          "level": "low",
+          "requireApproval": false,
+          "riskyActions": []
+        },
+        {
+          "id": "sequential-thinking",
+          "level": "low",
+          "requireApproval": false,
+          "riskyActions": []
+        },
+        {
+          "id": "git",
+          "level": "medium",
+          "requireApproval": true,
+          "riskyActions": [
+            "reset",
+            "checkout",
+            "delete-branch",
+            "force-push"
+          ]
+        },
+        {
+          "id": "postgres",
+          "level": "high",
+          "requireApproval": true,
+          "riskyActions": [
+            "drop",
+            "delete",
+            "truncate",
+            "update",
+            "alter"
+          ]
+        },
+        {
+          "id": "github",
+          "level": "medium",
+          "requireApproval": true,
+          "riskyActions": []
+        }
+      ]
+    }
+  }
+}

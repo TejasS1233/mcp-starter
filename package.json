@@ -1,0 +1,42 @@
+{
+  "name": "@tejas_sidhwani/mcp-starter",
+  "version": "0.2.1",
+  "description": "Beginner-friendly MCP setup manager for Claude Code, OpenCode, and Cursor",
+  "type": "module",
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE",
+    "package.json"
+  ],
+  "bin": {
+    "mcp-starter": "src/index.js",
+    "tejas-mcp": "src/index.js"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "init": "node src/index.js init",
+    "list": "node src/index.js list",
+    "validate": "node src/index.js validate",
+    "apply": "node src/index.js apply",
+    "wizard": "node src/index.js wizard",
+    "setup": "node src/index.js setup",
+    "import": "node src/index.js import",
+    "supervise": "node src/index.js supervise start",
+    "test:smoke": "node scripts/smoke-test.mjs"
+  },
+  "keywords": [
+    "mcp",
+    "mcp-setup",
+    "beginner",
+    "agents",
+    "claude",
+    "opencode",
+    "cursor",
+    "tooling"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "yaml": "^2.8.1"
+  }
+}
